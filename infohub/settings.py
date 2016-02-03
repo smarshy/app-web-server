@@ -29,7 +29,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'rest_framework_swagger',
     'infohub',
-    'malaria',
+    'malaria_web',
     'malaria_api',
     'peacetrack',
     'webhub',

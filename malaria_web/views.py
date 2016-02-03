@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.http import Http404, HttpResponseRedirect
 from django.core.urlresolvers import reverse
-from malaria.forms import PostForm
-from malaria.models import Post
-from malaria.services import create_post_from_form, create_revpost, \
+from malaria_web.forms import PostForm
+from malaria_web.models import Post
+from malaria_web.services import create_post_from_form, create_revpost, \
     delete_post_by_id, get_post_by_id, get_revposts_of_owner
 
 
@@ -14,7 +14,7 @@ def list_posts(request):
 
     post_list = Post.objects.all()
     return render(request,
-                  'malaria/list_posts.html',
+                  'malaria_web/list_posts.html',
                   {'post_list': post_list})
 
 
@@ -36,14 +36,14 @@ def create_post(request):
             if post:
                 revpost = create_revpost(owner, post, title, description)
                 if revpost:
-                    return HttpResponseRedirect(reverse('malaria:list_posts'))
+                    return HttpResponseRedirect(reverse('malaria_web:list_posts'))
                 else:
                     raise Http404
             else:
                 raise Http404
 
     return render(request,
-                  'malaria/create_post.html',
+                  'malaria_web/create_post.html',
                   {'form': form})
 
 
@@ -83,16 +83,16 @@ def edit_post(request, post_id):
                     else:
                         raise Http404
 
-                return HttpResponseRedirect(reverse('malaria:view_post',
+                return HttpResponseRedirect(reverse('malaria_web:view_post',
                                                     args=(post_id,)))
             else:
                 return render(request,
-                              'malaria/edit_post.html',
+                              'malaria_web/edit_post.html',
                               {'form': form, 'post': post})
         else:
             form = PostForm(instance=post)
             return render(request,
-                          'malaria/edit_post.html',
+                          'malaria_web/edit_post.html',
                           {'form': form, 'post': post})
     else:
         raise Http404
@@ -105,12 +105,12 @@ def delete_post(request, post_id):
 
     if request.method == 'POST':
         if delete_post_by_id(post_id):
-            return HttpResponseRedirect(reverse('malaria:list_posts'))
+            return HttpResponseRedirect(reverse('malaria_web:list_posts'))
         else:
             raise Http404
     else:
         return render(request,
-                      'malaria/delete_post.html',
+                      'malaria_web/delete_post.html',
                       {'post_id': post_id})
 
 
@@ -124,7 +124,7 @@ def view_post(request, post_id):
     # revpost may not exist yet so do not check it
     if post:
         return render(request,
-                      'malaria/view_post.html',
+                      'malaria_web/view_post.html',
                       {'post': post,
                        'revpost_list': revpost_list})
     else:

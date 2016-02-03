@@ -14,7 +14,7 @@
 </center>
 {% if post_list %}
     <div class="well">
-        <a href="{% url 'malaria:create_post' %}" class="btn btn-default pull-right">New Post</a>
+        <a href="{% url 'malaria_web:create_post' %}" class="btn btn-default pull-right">New Post</a>
         <table class="table">
             <thead>
                 <tr>
@@ -35,9 +35,9 @@
                             </h4>
                         </td>
                         <td>
-                            <a href="{% url 'malaria:view_post' post.id %}" class="btn btn-default">View</a>
-                            <a href="{% url 'malaria:edit_post' post.id %}" class="btn btn-info">Edit</a>
-                            <a href="{% url 'malaria:delete_post' post.id %}" class="btn btn-danger">Delete</a>
+                            <a href="{% url 'malaria_web:view_post' post.id %}" class="btn btn-default">View</a>
+                            <a href="{% url 'malaria_web:edit_post' post.id %}" class="btn btn-info">Edit</a>
+                            <a href="{% url 'malaria_web:delete_post' post.id %}" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
                 {% endfor %}
@@ -46,7 +46,7 @@
     </div>
 {% else %}
     <div class="well">
-        <a href="{% url 'malaria:create_post' %}" class="btn btn-default pull-right">New Post</a>
+        <a href="{% url 'malaria_web:create_post' %}" class="btn btn-default pull-right">New Post</a>
         <h3 class="text-center inverted-font">No Posts</h3>
     </div>
 {% endif %}

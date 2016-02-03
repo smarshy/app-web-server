@@ -2,11 +2,11 @@
 
 {% block content %}
 <br><br><br><br><br><br>
-<center><h2><font color="#2c0f00"> Malaria : infoHub</font></h2></center>
+<center><h2><font color="#2c0f00"> Malaria : infoHub</font> </h2></center>
 <div class="well">
-    <h2 class="text-center inverted-font">New Post</h2>
+    <h2 class="text-center inverted-font">Edit Post</h2>
     <br>
-    <form class="form-horizontal" action="{% url 'malaria:create_post' %}" method="post">
+    <form class="form-horizontal" action="{% url 'malaria_web:edit_post' post.id %}" method="post">
         {% csrf_token %}
         <div class="form-group">
             <label class="col-sm-2 control-label inverted-font">Title</label>
@@ -26,8 +26,8 @@
         <div class="form-group">
             <label class="col-sm-2 control-label inverted-font">Description</label>
             <div class="col-sm-9">
-                <textarea class="form-control" rows="18" name="description_post">{% if form.description_post.value %}{{ form.description_post.value }}{% endif %}</textarea>
-                <p class="help-block inverted-font">
+                <textarea class="form-control" rows="18" name="description_post">{% if form.title_post.value %}{{ form.description_post.value }}{% endif %}</textarea>
+                <p class="help-block inverted-font">    
                     <strong>
                         {% if form.description_post.errors %}
                             {% for error in form.description_post.errors %}
@@ -41,10 +41,11 @@
         <div class="form-group">
             <div class="col-sm-12 col-sm-offset-2">
                 <button type="submit" class="btn btn-default">Submit</button>
-                <a href="{% url 'malaria:list_posts' %}" class="btn btn-default">Cancel</a>
+                <a href="{% url 'malaria_web:list_posts' %}" class="btn btn-default">Cancel</a>
             </div>
         </div>
     </form>
+    <br>    
 </div>
-<br><br><br>
+<br><br>
 {% endblock %}
