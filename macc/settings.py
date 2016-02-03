@@ -28,7 +28,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_swagger',
-    'infohub',
+    'macc',
     'malaria',
     'malaria_api',
     'peacetrack',
@@ -44,9 +44,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'infohub.urls'
+ROOT_URLCONF = 'macc.urls'
 
-WSGI_APPLICATION = 'infohub.wsgi.application'
+WSGI_APPLICATION = 'macc.wsgi.application'
 
 
 # Database

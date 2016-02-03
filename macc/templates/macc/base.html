@@ -2,19 +2,19 @@
 {% load staticfiles %}
 <html>
     <head>
-        <link href="{% static "infohub/bootstrap-3.3.5-dist/css/bootstrap.min.css" %}" rel="stylesheet">
-        <link href="{% static "infohub/bootstrap-css-custom/navbar-default.css" %}" rel="stylesheet">
-        <link href="{% static "infohub/bootstrap-css-custom/sticky-footer.css" %}" rel="stylesheet">
-        <link href="{% static "infohub/bootstrap-css-custom/well.css" %}" rel="stylesheet">
-        <link href="{% static "infohub/css/navbar-btn.css" %}" rel="stylesheet">
-        <link href="{% static "infohub/css/text-color.css" %}" rel="stylesheet">
+        <link href="{% static "macc/bootstrap-3.3.5-dist/css/bootstrap.min.css" %}" rel="stylesheet">
+        <link href="{% static "macc/bootstrap-css-custom/navbar-default.css" %}" rel="stylesheet">
+        <link href="{% static "macc/bootstrap-css-custom/sticky-footer.css" %}" rel="stylesheet">
+        <link href="{% static "macc/bootstrap-css-custom/well.css" %}" rel="stylesheet">
+        <link href="{% static "macc/css/navbar-btn.css" %}" rel="stylesheet">
+        <link href="{% static "macc/css/text-color.css" %}" rel="stylesheet">
     </head>
     <body>
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="{% url 'webhub:dashboard' %}">
-                        <img class="navbar-brand-img" src="{% static "infohub/img/logo.gif" %}">
+                        <img class="navbar-brand-img" src="{% static "macc/img/logo.gif" %}">
                     </a>
                     <a class="navbar-brand hidden-xs" href="{% url 'webhub:dashboard' %}"><h1>Mobile App Control Center</h1></a>
                 </div>

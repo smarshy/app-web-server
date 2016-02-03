@@ -201,7 +201,7 @@ Make sure to exit the postgres client before proceeding to the next steps:
 
 ## Update settings.py
 
-Update the database settings in **settings.py** in the **infohub** directory to look like this:
+Update the database settings in **settings.py** in the **macc** directory to look like this:
 ```
 DATABASES = {
     'default': {
@@ -213,7 +213,7 @@ DATABASES = {
     }
 }
 ```
-Update the smtp settings in **settings.py** in the **infohub** directory to look like this:
+Update the smtp settings in **settings.py** in the **macc** directory to look like this:
 ```
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'pc.mobile.control.center@gmail.com'
